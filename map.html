@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- META -->
+	<title>Map</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" /> 
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	
+	<!--
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
+	
+	<script type="text/javascript" src="http://www.blurjs.com/blur.js"></script>
+	 <script type="text/javascript" src="http://gianlucaguarini.github.io/Vague.js/Vague.js"></script> -->
+
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+	<!-- 
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="http://jquery-ui-map.googlecode.com/svn/trunk/ui/jquery.ui.map.js"></script>
+	 -->
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+	<!--[if IE 6]>
+	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>
+	  DD_belatedPNG.fix('.nav, a ,img, .png24');
+	</script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="map_page">
+
+		<header class="main-header full_width fixed">
+			<div class="header-wrapper">
+				<div class="header-content">
+					<nav class="top-nav" role="navigation">
+						<ul id="navigation">
+					<li class="home">
+						<a href="index.php" title=""><h1>Karnataka Learning Partnership</h1></a>
+					</li>
+					<li class="school_map">
+						<a href="map.html" title="">School Map</a>
+					</li>
+					<li class="programmes">
+						<a href="programmes.php" title="">Programmes</a>
+						<ul>
+							<li><a href="reading_programme.php" title=""><span></span>Reading</a></li>
+							<li><a href="maths_programme.php" title=""><span></span>Math</a></li>
+							<li><a href="library_programme.php" title=""><span></span>Library</a></li>
+							<li><a href="preschool_programme.php" title=""><span></span>Pre-School</a></li>
+						</ul>
+					</li>
+					<li class="volunteer"><a href="volunteer.php" title="">Volunteer</a></li>
+					<li class="database">
+						<a href="status_1.php" title="">Database</a>
+						<ul>
+							<li><a href="status_1.php" title=""><span></span>Status 1</a></li>
+							<li><a href="status_2.php" title=""><span></span>Status 2</a></li>
+							<li><a href="status_3.php" title=""><span></span>Status 3</a></li>
+							<li><a href="#" title=""><span></span>Raw Data</a></li>
+							<li><a href="#" title=""><span></span>Github</a></li>
+						</ul>
+					</li>
+					<li class="reports"><a href="#" title="">Reports</a></li>
+					<li class="about">
+						<a href="about.php" title="">About</a>
+						<ul>
+							<li><a href="about.php" title=""><span></span>About</a></li>
+							<li><a href="partners.php" title=""><span></span>Partners</a></li>
+							<li><a href="disclaimer.php" title=""><span></span>Disclaimer</a></li>
+						</ul>
+					</li>
+				</ul>
+					</nav>
+					<div class="clr"></div>
+				</div>
+			</div>
+
+			<div class="subheader-wrapper">
+				<div class="subheader-content">
+					<div class="breadcrumb">
+				    	<a href="">Home</a><span></span>
+				    	<a href="">School map</a>
+				    </div>
+				</div>
+			</div>
+		</header>
+
+		<section id="map_canvas" class="map_canvas_full">
+
+		</section>
+
+		<section id="sidebar_wrapper" class="sidebar_wrapper">
+			<ul>
+				<li class="place_item active">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+				<li class="place_item">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+				<li class="place_item">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+				<li class="place_item">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+				<li class="place_item">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+				<li class="place_item">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+				<li class="place_item">
+					<div class="details">
+						<h3>Gian Jyoti Public School</h3>
+						<div class="info">
+							Street No-4, Banasawadi<br/>
+							Bangalore
+						</div>
+					</div>
+					<div class="stats">
+						<span class="distance">400m</span>
+					</div>
+				</li>
+			</ul>
+		</section>
+
+		<section id="map_overlay" class="map_overlay">
+			<a href="" class="close_btn" title="Close"><!-- Close --><span></span></a>
+			<div class="content">
+				<div class="effect_to_be_done"></div>
+				<div class="info">
+					<div class="fl">
+						<h2>Gian Jyoti Public School</h2>
+						<div class="item">
+							<div class="label">District</div>
+							<div class="value">Bangalore</div>
+						</div>
+						<div class="item">
+							<div class="label">Block</div>
+							<div class="value">North-2</div>
+						</div>
+						<div class="item">
+							<div class="label">Cluster</div>
+							<div class="value">Malleswaram</div>
+						</div>
+					</div>
+					<div class="fr">
+						<a class="button" href="">Volunteer here</a>
+					</div>
+					<div class="clr"></div>
+				</div>
+				<ul class="tabs">
+					<li data-tab="tab-info" class="current">Info</li>
+					<li data-tab="tab-demographics">Demographics</li>
+					<li data-tab="tab-programmes">Programmes</li>
+					<li data-tab="tab-finances">Finances</li>
+					<li data-tab="tab-infrastructure">Infrastructure</li>
+					<li data-tab="tab-library">Library</li>
+					<li data-tab="tab-nutrition">Nutrition</li>
+					<li>Share your story</li>
+				</ul>
+
+				<!-- Info Tab BEGIN -->
+				<div id="tab-info" class="tab_content current">
+					<div class="fl">
+						<h4>Address</h4>
+						<p>1st Main Road, 2nd Cross, Yeshwanthura, <strong>Bangalore</strong> - 560022</p>
+						<h4>Landmark</h4>
+						<p>Near St. Francis Church</p>
+
+						<h4>School Information</h4>
+						<table class="info_data_table">
+							<tr>
+								<td>Category</td>
+								<td>Model Primary</td>
+							</tr>
+							<tr>
+								<td>Buses</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>Gender</td>
+								<td>Co-ed</td>
+							</tr>
+							<tr>
+								<td>Medium</td>
+								<td>Kannada</td>
+							</tr>
+							<tr>
+								<td>DSIE</td>
+								<td>290200050050007</td>
+							</tr>
+						</table>
+
+						<h4>Constituency Information</h4>
+						<table class="info_data_table">
+							<tr>
+								<td>MLA Constituency</td>
+								<td>Malleswaram</td>
+							</tr>
+							<tr>
+								<td>MLA Details</td>
+								<td>Dr. Ashwath Narayan (BJP)</td>
+							</tr>
+							<tr>
+								<td>MLA Constituency</td>
+								<td>Malleswaram</td>
+							</tr>
+							<tr>
+								<td>MLA Details</td>
+								<td>DB Chandre Gowada (BJP)</td>
+							</tr>
+						</table>
+					</div>
+					<div class="photos_block">
+						<h4>Photos</h4>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<a href=""><img src="images/map_photo.jpg" alt=""></a>
+						<div class="clr"></div>
+					</div>
+					<div class="clr"></div>
+				</div>
+				<!-- Info Tab END -->
+				
+				<!-- Demographics Tab BEGIN -->
+				<div id="tab-demographics" class="tab_content">
+					<div class="fl">
+						<h4>Student Information</h4>
+
+						<div class="pie_chart_wrapper">
+							<div class="chart fl"></div>
+							<div class="gender_icons fl">
+								<div class="stats_gender_item no_width boy">
+									<span class="icon"></span>
+									<p class="label">Boys</p>
+									<p class="value">65%</p>
+									<div class="clr"></div>
+								</div>
+								<div class="stats_gender_item no_width girl">
+									<span class="icon"></span>
+									<p class="label">Girls</p>
+									<p class="value">65%</p>
+									<div class="clr"></div>
+								</div>
+							</div>
+							<div class="clr"></div>
+						</div>
+					</div>
+					<div class="fr">
+						<h4>Languages</h4>
+						<div class="bar_graph_hor">
+							<div class="item">
+								<div class="label">English</div>
+								<div class="bar"><div class="value" style="width:35%;"></div></div>
+							</div>
+							<div class="item">
+								<div class="label">Kannada</div>
+								<div class="bar"><div class="value" style="width:60%;"></div></div>
+							</div>
+							<div class="item">
+								<div class="label">Urdu</div>
+								<div class="bar"><div class="value" style="width:35%;"></div></div>
+							</div>
+							<div class="item">
+								<div class="label">Others</div>
+								<div class="bar"><div class="value" style="width:20%;"></div></div>
+							</div>
+						</div>
+					</div>
+					<div class="clr"></div>
+
+					<h4>DISE Student Profile</h4>
+					<table class="info_data_table label_small">
+						<tr>
+							<td>Source</td>
+							<td>KLP Database (2011-2012), <strong>NUEPA-DISE</strong></td>
+						</tr>
+					</table>
+
+					<div class="top_bordered_block">
+						<p>
+							Directly access this page from here <a href=""><b>http://klp.org.in/schoolpage/school/33175?tab=demographics</b></a>
+						</p>
+						<p>
+							Please read KLP's <a href=""><b>data-related disclaimer</b></a> . If you notice any errors or inaccuracies related to data or any other content found on this page, please click here to send us an email.
+						</p>
+					</div>
+				</div>
+				<!-- Demographics Tab END -->
+
+				<!-- Programme Tab BEGIN -->
+				<div id="tab-programmes" class="tab_content">
+					<h4>Programme Information</h4>
+					<a href="" class="black external"><b>Akshara Foundation-Reading (2006)</b></a><br/>
+					<a href="" class="black external"><b>Akshara Foundation-Remedial_Math_Level2 (2008)</b></a>
+
+					<table class="info_data_table label_small mar_top_25">
+						<tr>
+							<td>Source</td>
+							<td>KLP Database (2011-2012), <strong>NUEPA-DISE</strong></td>
+						</tr>
+					</table>
+					<div class="top_bordered_block">
+						<p>
+							Directly access this page from here <a href=""><b>http://klp.org.in/schoolpage/school/33175?tab=programmes</b></a>
+						</p>
+						<p>
+							Please read KLP's <a href=""><b>data-related disclaimer</b></a> . If you notice any errors or inaccuracies related to data or any other content found on this page, please click here to send us an email.
+						</p>
+					</div>
+				</div>
+				<!-- Programme Tab END -->
+
+				<!-- Finances Tab BEGIN -->
+				<div id="tab-finances" class="tab_content">
+					<h4>SSA GRANTS ALLOCATION</h4>
+
+					<div class="ta_c">{ Chart here }</div>
+
+					<table class="info_data_table label_longer mar_top_25 mar_btm_25">
+						<tr>
+							<td>School Maintence Grant (SMG)</td>
+							<td>₹ 5,000 for upto 3 classrooms and ₹ 10,000 for more than 3 classrooms.</td>
+						</tr>
+						<tr>
+							<td>School Grant (SG)</td>
+							<td>₹ 5,000 for lower primary schools and ₹ 7,000 for upper and model primary schools.</td>
+						</tr>
+						<tr>
+							<td>Teacher Learning Material Grant (TLM)</td>
+							<td>₹ 500 per teacher.</td>
+						</tr>
+					</table>
+
+					<p>
+						This school with 3 classrooms or fewer has 3 teachers as per DISE sources.<br/>
+						It is known to receive a total annual SSA grant of ₹ 13,500.
+					</p>
+
+					<div class="top_bordered_block">
+						<p>
+							Directly access this page from here <a href=""><b>http://klp.org.in/schoolpage/school/33175?tab=finances</b></a>
+						</p>
+						<p>
+							Please read KLP's <a href=""><b>data-related disclaimer</b></a> . If you notice any errors or inaccuracies related to data or any other content found on this page, please click here to send us an email.
+						</p>
+					</div>
+				</div>
+				<!-- Finances Tab END -->
+
+				<!-- Infrastructure Tab BEGIN -->
+				<div id="tab-infrastructure" class="tab_content">
+					<h4>Infrastructure</h4>
+
+					<table class="infra_data_table mar_btm_25 fl">
+						<tr>
+							<td>Toilet Facilities</td>
+							<td>
+								<div class="green">Has Usable Toilets</div>
+								<div class="red">Has Toilets</div>
+								<div class="grey">Has Toilets</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Nutrition and Hygine</td>
+							<td>
+								<div class="green">Has Drinking Water Facilities</div>
+								<div class="red">Has Handwash Facilities</div>
+								<div class="grey">Has Clean and Timely Meals</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Basic Infrastructure</td>
+							<td>
+								<div class="green">Has Spacious Classrooms and Play Class</div>
+								<div class="red">Has Walls Intact</div>
+								<div class="grey">Has Flooring Intact</div>
+								<div class="red">Has Roofs Intact</div>
+								<div class="grey">Is in a Designated Building by DWCD</div>
+								<div class="red">Has Water Supply</div>
+								<div class="green">Has Waste Baskets</div>
+							</td>
+						</tr>
+					</table>
+
+					<div class="infra_data_indicators fr">
+						<div class="green item">Indicates infrastructure present</div>
+						<div class="red item">Indicates infrastructure absent</div>
+						<div class="grey item">Indicates information unavailable</div>
+					</div>
+					<div class="clr"></div>
+
+					<div class="top_bordered_block">
+						<p>
+							Directly access this page from here <a href=""><b>http://klp.org.in/schoolpage/school/33175?tab=infrastructure</b></a>
+						</p>
+						<p>
+							Please read KLP's <a href=""><b>data-related disclaimer</b></a> . If you notice any errors or inaccuracies related to data or any other content found on this page, please click here to send us an email.
+						</p>
+					</div>
+				</div>
+				<!-- Infrastructure Tab END -->
+
+				<!-- Library Tab BEGIN -->
+				<div id="tab-library" class="tab_content">
+
+					<div class="options_wrapper">
+
+						<div class="select_pseudo">
+							<select name="language">
+								<option value="hindi">Hindi</option>
+								<option value="english">English</option>
+							</select>
+							<div class="button_wrapper"><button><span>Browse by language</span></button></div>
+							<ul>
+								<li>Hindi</li>
+								<li>English</li>
+								<li>Hindi</li>
+								<li>English</li>
+								<li>Hindi</li>
+								<li>English</li>
+							</ul>
+						</div>
+
+						<div class="select_pseudo">
+							<select name="language">
+							</select>
+							<div class="button_wrapper"><button>Year <span>2012-2013</span></button></div>
+							<ul>
+								<li>2012-2013</li>
+								<li>2011-2012</li>
+								<li>2010-2011</li>
+							</ul>
+						</div>
+
+						<div class="select_pseudo">
+							<select name="language">
+							</select>
+							<div class="button_wrapper"><button>Class <span>1</span></button></div>
+							<ul>
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>
+
+						<button class="styled">Switch to Graph View</button>
+
+					</div>
+
+					<div class="ta_c pad_10">{ Graph here }</div>
+
+					<!-- <div class="option_item dropdown">
+						Browse by language
+						<ul>
+							<li>option</li>
+							<li>option</li>
+							<li>option</li>
+							<li>option</li>
+							<li>option</li>
+						</ul>
+					</div> -->
+
+					<table class="basic_table mar_top_25">
+						<tr>
+							<th>Month</th>
+							<th>Kannada</th>
+							<th>Urdu</th>
+							<th>Telugu</th>
+							<th>Tamil</th>
+							<th>Hindi</th>
+							<th>English</th>
+						</tr>
+						<tr>
+							<td>Jan</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Feb</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Mar</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Apr</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>May</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Jun</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Jul</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Aug</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Sep</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Oct</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Nov</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Dec</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>0.4</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+
+					<h4>Akshara Library Details</h4>
+
+					<table class="info_data_table label_long mar_top_25 mar_btm_25">
+						<tr>
+							<td>Number of Chairs</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Number of Books</td>
+							<td>1006</td>
+						</tr>
+						<tr>
+							<td>Number of UPS(s)</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Status Library</td>
+							<td>Handed over</td>
+						</tr>
+						<tr>
+							<td>Number of Tables</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>Number of Racks</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Number of Computers</td>
+							<td>-</td>
+						</tr>
+					</table>
+
+					<p>DISE Reports Number of Books as : <strong>175</strong></p>
+
+					<table class="info_data_table label_small">
+						<tr>
+							<td>Source</td>
+							<td>KLP Database (2011-2012), <strong>NUEPA-DISE</strong></td>
+						</tr>
+					</table>
+
+
+					<div class="top_bordered_block">
+						<p>
+							Directly access this page from here <a href=""><b>http://klp.org.in/schoolpage/school/33175?tab=nutrition</b></a>
+						</p>
+						<p>
+							Please read KLP's <a href=""><b>data-related disclaimer</b></a> . If you notice any errors or inaccuracies related to data or any other content found on this page, please click here to send us an email.
+						</p>
+					</div>
+					
+				</div>
+				<!-- Library Tab END -->
+
+				<!-- Nutrition Tab BEGIN -->
+				<div id="tab-nutrition" class="tab_content">
+					<h4>Mid-day Meal Summary</h4>
+
+					{ Graph here }
+
+					<div class="top_bordered_block">
+						<p>
+							Directly access this page from here <a href=""><b>http://klp.org.in/schoolpage/school/33175?tab=nutrition</b></a>
+						</p>
+						<p>
+							Please read KLP's <a href=""><b>data-related disclaimer</b></a> . If you notice any errors or inaccuracies related to data or any other content found on this page, please click here to send us an email.
+						</p>
+					</div>
+					
+				</div>
+				<!-- Nutrition Tab END -->
+			</div>
+		</section>
+
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			resize_pageElements();
+			//load_map();
+			fill_pseudo_select();
+
+
+			// Tabs handler
+			$('ul.tabs li').click(function(){
+				var tab_id = $(this).attr('data-tab');
+
+				$('ul.tabs li').removeClass('current');
+				$('.tab_content').removeClass('current');
+
+				$(this).addClass('current');
+				$("#"+tab_id).addClass('current');
+			});
+		});
+
+		$(window).resize(function() {
+			resize_pageElements();
+		});
+
+		function load_map(){
+			$('#map_canvas').gmap().bind('init', function(ev, map) {
+				$('#map_canvas').gmap('addMarker', {'position': '57.7973333,12.0502107', 'bounds': true}).click(function() {
+					$('#map_canvas').gmap('openInfoWindow', {'content': 'Hello World!'}, this);
+				});
+				$('#map_canvas').gmap('addMarker', {'position': '57.8099333,12.0519507', 'bounds': true}).click(function() {
+					$('#map_canvas').gmap('openInfoWindow', {'content': 'Hello World 2!'}, this);
+				});
+			});
+		}
+
+		function resize_pageElements(){
+			var sidebar_height = $(window).height() - $(".main-header").height();
+			$("#sidebar_wrapper").css({'height': sidebar_height + 'px'});
+			$("#sidebar_wrapper").css({'padding-top': '1px'}); 	// Extra 1px for fixing rounding off errors durng height calculation
+
+			// Sidebar scrolling
+			$('#sidebar_wrapper ul').slimScroll({
+		        height: sidebar_height+'px',
+		        size: '5px',
+		        color: '#8d8d8d',
+		        railVisible: false,
+		    });
+
+			// Map overlay
+		    var map_overlay_top = $(".main-header").height()+20+100;
+			$("#map_overlay").css({'top': map_overlay_top + 'px'});
+
+		    //var map_overlay_height = sidebar_height-40;
+		    //var map_overlay_width = $(window).width() - (320+40);
+		    //$("#map_overlay").css({'height': map_overlay_height + 'px'});
+		    //$("#map_overlay").css({'width': map_overlay_width + 'px'});
+		}
+
+		function fill_pseudo_select(){
+			$(".select_pseudo").each(function() { 
+				var options_list = new Array();
+				var options_list_html = '';
+				$("option").each(function(){ 
+					options_list[$(this).val()] = $(this).text();
+
+					options_list_html += '<li>'+$(this).text()+'</li>';
+					//alert($(this).text()); 
+				});
+				//$(this).("ul").html(options_list_html);
+				console.log(options_list);
+				//alert('fdff'); 
+			});
+		}
+	</script>
+
+
+</body>
+</html>
